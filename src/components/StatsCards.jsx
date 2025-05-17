@@ -3,7 +3,6 @@ import React from 'react';
 const StatsCards = ({ timeline }) => {
   const dates = Object.keys(timeline.cases);
   const lastDate = dates[dates.length - 1];
-
   return (
     <div className="stats">
       <div className="card cases">Cases: {timeline.cases[lastDate]}</div>
@@ -13,4 +12,4 @@ const StatsCards = ({ timeline }) => {
   );
 };
 
-export default StatsCards;
+export default StatsCards

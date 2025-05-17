@@ -2,7 +2,7 @@ import React from 'react';
 import {
   LineChart as RechartLineChart, Line, XAxis, YAxis, Tooltip, Legend, CartesianGrid, ResponsiveContainer
 } from 'recharts';
-
+import { format, parse } from 'date-fns';
 const LineChart = ({ timeline }) => {
   const data = Object.keys(timeline.cases).map(date => ({
     date,
@@ -16,8 +16,21 @@ const LineChart = ({ timeline }) => {
       <h2>Cases Over Time</h2>
       <ResponsiveContainer width="100%" height={400}>
         <RechartLineChart data={data}>
-          <XAxis dataKey="date" hide />
-          <YAxis />
+
+<XAxis
+  dataKey="date"
+  tickFormatter={(dateStr) => {
+    const parsedDate = parse(dateStr, 'M/d/yy', new Date());
+    return isNaN(parsedDate) ? '' : format(parsedDate, 'MMM yyyy');
+  }}
+/>  
+<YAxis
+  tickFormatter={(value) => {
+    if (value >= 1e6) return `${(value / 1e6).toFixed(1)}M`;
+    if (value >= 1e3) return `${(value / 1e3).toFixed(1)}K`;
+    return value;
+  }}
+/>
           <Tooltip />
           <Legend />
           <CartesianGrid stroke="#ccc" />

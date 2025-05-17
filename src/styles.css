@@ -1,5 +1,5 @@
 body {
-  background-image: url('./../public/background.jpg'); /* note the leading slash */
+  background-image: url('./../public/background.jpg'); 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -11,14 +11,44 @@ body {
 }
 
 .container {
-  max-width: 960px;
+  max-width: 1260px;
   margin: auto;
   padding: 1rem;
 }
 
 h1 {
-  text-align: center;
+  text-align: start;
 }
+.white-heading {
+  color: white;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.country-selector select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 30px;    
+  border: 1px solid #ccc;
+  width: 180%;
+  margin-top: 10px;
+}
+
+.date-inputs {
+  display: flex;
+  gap: 1rem;
+}
+
+
+
+
 
 .dropdown {
   text-align: center;
@@ -28,7 +58,18 @@ h1 {
 select {
   padding: 0.5rem;
   font-size: 1rem;
+  align-items: flex-start;
+  border-radius: 30px;    
+  border: 1px solid #ccc;
+  width: 550px;           
 }
+.date-inputs input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
 
 .stats {
   display: flex;
@@ -48,19 +89,27 @@ select {
   font-weight: bold;
 }
 
+.charts-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .chart {
   background: #fff;
-  margin: 1rem 0;
+  margin: 0.5rem;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex: 1 1 48%;    
+  min-width: 300px; 
 }
 
-.loader {
-  text-align: center;
-  padding: 2rem;
-  font-size: 1.5rem;
-}
+
+
+  
+
 
 .error {
   color: red;
