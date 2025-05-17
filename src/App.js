@@ -66,29 +66,30 @@ function App() {
   return (
     <div className="container">
       <h1 className="white-heading">COVID-19 Dashboard</h1>
+     
      <div className="controls">
-  <div className="country-selector">
-    <CountrySelector
-      countries={countries}
-      selected={selected}
-      onChange={setSelected}
-    />
-  </div>
-  <div className="date-inputs">
-    <input
-      type="date"
-      name="startDate"
-      value={startDate}
-      onChange={(e) => setStartDate(e.target.value)}
-    />
-    <input
-      type="date"
-      name="endDate"
-      value={endDate}
-      onChange={(e) => setEndDate(e.target.value)}
-    />
-  </div>
-</div>
+      <div className="country-selector">
+        <CountrySelector
+          countries={countries}
+          selected={selected}
+          onChange={setSelected}
+        />
+      </div>
+      <div className="date-inputs">
+        <input
+          type="date"
+          name="startDate"
+          value={startDate}
+          onChange={(e) => setStartDate(e.target.value)}
+        />
+        <input
+          type="date"
+          name="endDate"
+          value={endDate}
+          onChange={(e) => setEndDate(e.target.value)}
+        />
+      </div>
+    </div>
 
       <StatsCards timeline={filteredTimeline} />
       <div className="charts-wrapper">

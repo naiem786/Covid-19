@@ -26,20 +26,27 @@ h1 {
 .controls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 10px;
   margin-bottom: 1rem;
 }
 
+/* Give the wrapper 40% width, and let the inner <select> fill it */
+.country-selector {
+  flex: 0 0 65%;
+  margin-top: 10px;   /* if you still want that top offset */
+}
+
+/* Make the select fill its wrapper */
 .country-selector select {
+  width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
-  border-radius: 30px;    
+  border-radius: 30px;
   border: 1px solid #ccc;
-  width: 180%;
-  margin-top: 10px;
 }
+
 
 .date-inputs {
   display: flex;
